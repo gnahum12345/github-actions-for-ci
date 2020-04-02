@@ -25,7 +25,10 @@ jobs:
         path: public/
   test:
     needs: build
-  
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
     strategy:
       matrix:
         os: [ubuntu-lastest, windows-2016]
